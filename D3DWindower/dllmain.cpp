@@ -46,7 +46,7 @@ extern "C" __declspec(dllexport) void InstallHook(LPVOID message)
 	width = (int)messageStruct->width;
 	height = (int)messageStruct->height;
 	DetourTransactionBegin();
-    DetourUpdateThread(GetCurrentThread());
+	DetourUpdateThread(GetCurrentThread());
 	DetourAttach(&(PVOID&)Reset, MyReset);
 	DetourTransactionCommit();
 }
